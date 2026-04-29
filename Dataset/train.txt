@@ -1,0 +1,268 @@
+L257	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L257/02-04-2022-NA-NA-03853/302.000000-Full Dose Images-51345	
+N077	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N077/02-04-2022-NA-NA-73151/302.000000-Full Dose Images-14953	
+C203	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C203/12-23-2021-NA-NA-01966/1.000000-Full Dose Images-61936	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C203/12-23-2021-NA-NA-01966/1.000000-Low Dose Images-71221
+C095	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C095/12-23-2021-NA-NA-41601/1.000000-Full Dose Images-44048	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C095/12-23-2021-NA-NA-41601/1.000000-Low Dose Images-40418
+C258	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C258/12-23-2021-NA-NA-72705/1.000000-Full Dose Images-03288	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C258/12-23-2021-NA-NA-72705/1.000000-Low Dose Images-92520
+L237	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L237/12-23-2021-NA-NA-12584/1.000000-Full Dose Images-80765	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L237/12-23-2021-NA-NA-12584/1.000000-Low Dose Images-12976
+L250	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L250/02-04-2022-NA-NA-42990/302.000000-Full Dose Images-71745	
+C049	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C049/02-04-2022-NA-NA-02973/304.000000-Full Dose Images-01214	
+C181	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C181/02-04-2022-NA-NA-82717/302.000000-Full Dose Images-53618	
+N078	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N078/02-04-2022-NA-NA-19409/302.000000-Full Dose Images-74070	
+C151	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C151/02-04-2022-NA-NA-83009/302.000000-Full Dose Images-32565	
+N101	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N101/02-04-2022-NA-NA-13089/302.000000-Full Dose Images-80110	
+C019	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C019/02-04-2022-NA-NA-51812/302.000000-Full Dose Images-58430	
+N056	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N056/12-23-2021-NA-NA-32551/1.000000-Full Dose Images-60654	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N056/12-23-2021-NA-NA-32551/1.000000-Low Dose Images-44164
+C137	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C137/02-04-2022-NA-NA-02148/302.000000-Full Dose Images-01784	
+L241	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L241/12-23-2021-NA-NA-50920/1.000000-Full Dose Images-70970	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L241/12-23-2021-NA-NA-50920/1.000000-Low Dose Images-31092
+C120	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C120/12-23-2021-NA-NA-30414/1.000000-Full Dose Images-23396	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C120/12-23-2021-NA-NA-30414/1.000000-Low Dose Images-81661
+C042	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C042/02-04-2022-NA-NA-14079/302.000000-Full Dose Images-03880	
+N232	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N232/02-04-2022-NA-NA-90577/302.000000-Full Dose Images-28824	
+N017	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N017/02-04-2022-NA-NA-12965/302.000000-Full Dose Images-12669	
+L075	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L075/12-23-2021-NA-NA-02911/1.000000-Full Dose Images-27792	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L075/12-23-2021-NA-NA-02911/1.000000-Low Dose Images-11558
+N248	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N248/02-04-2022-NA-NA-83792/302.000000-Full Dose Images-26338	
+C021	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C021/12-23-2021-NA-NA-10262/1.000000-Full Dose Images-62518	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C021/12-23-2021-NA-NA-10262/1.000000-Low Dose Images-31031
+N037	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N037/02-04-2022-NA-NA-01319/302.000000-Full Dose Images-62329	
+C074	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C074/02-04-2022-NA-NA-12684/302.000000-Full Dose Images-16616	
+L221	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L221/12-23-2021-NA-NA-01020/1.000000-Full Dose Images-83206	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L221/12-23-2021-NA-NA-01020/1.000000-Low Dose Images-91207
+N265	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N265/12-23-2021-NA-NA-74276/1.000000-Full Dose Images-74259	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N265/12-23-2021-NA-NA-74276/1.000000-Low Dose Images-31380
+C290	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C290/02-04-2022-NA-NA-01344/302.000000-Full Dose Images-40251	
+N001	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N001/02-04-2022-NA-NA-15822/302.000000-Full Dose Images-30053	
+N264	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N264/12-23-2021-NA-NA-73038/1.000000-Full Dose Images-82268	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N264/12-23-2021-NA-NA-73038/1.000000-Low Dose Images-40519
+L035	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L035/02-04-2022-NA-NA-73303/302.000000-Full Dose Images-80253	
+L229	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L229/12-23-2021-NA-NA-12191/1.000000-Full Dose Images-83534	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L229/12-23-2021-NA-NA-12191/1.000000-Low Dose Images-62446
+C160	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C160/12-23-2021-NA-NA-82069/1.000000-Full Dose Images-62968	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C160/12-23-2021-NA-NA-82069/1.000000-Low Dose Images-63509
+L006	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L006/12-23-2021-NA-NA-42906/1.000000-Full Dose Images-18130	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L006/12-23-2021-NA-NA-42906/1.000000-Low Dose Images-35629
+C115	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C115/02-04-2022-NA-NA-63052/302.000000-Full Dose Images-41443	
+L004	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L004/12-23-2021-NA-NA-40641/1.000000-Full Dose Images-63186	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L004/12-23-2021-NA-NA-40641/1.000000-Low Dose Images-41625
+C037	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C037/02-04-2022-NA-NA-70589/302.000000-Full Dose Images-35667	
+C224	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C224/12-23-2021-NA-NA-20860/1.000000-Full Dose Images-14371	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C224/12-23-2021-NA-NA-20860/1.000000-Low Dose Images-13799
+N143	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N143/02-04-2022-NA-NA-03800/301.000000-Full Dose Images-14152	
+N300	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N300/12-23-2021-NA-NA-83925/1.000000-Full Dose Images-05243	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N300/12-23-2021-NA-NA-83925/1.000000-Low Dose Images-73259
+N030	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N030/12-23-2021-NA-NA-22477/1.000000-Full Dose Images-94120	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N030/12-23-2021-NA-NA-22477/1.000000-Low Dose Images-61899
+N216	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N216/12-23-2021-NA-NA-37002/1.000000-Full Dose Images-63426	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N216/12-23-2021-NA-NA-37002/1.000000-Low Dose Images-54098
+N195	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N195/02-04-2022-NA-NA-05788/302.000000-Full Dose Images-60676	
+C004	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C004/12-23-2021-NA-NA-40816/1.000000-Full Dose Images-73627	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C004/12-23-2021-NA-NA-40816/1.000000-Low Dose Images-30622
+N079	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N079/12-23-2021-NA-NA-24218/1.000000-Full Dose Images-91433	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N079/12-23-2021-NA-NA-24218/1.000000-Low Dose Images-33316
+N072	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N072/12-23-2021-NA-NA-30320/1.000000-Full Dose Images-18943	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N072/12-23-2021-NA-NA-30320/1.000000-Low Dose Images-83056
+L147	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L147/02-04-2022-NA-NA-23684/302.000000-Full Dose Images-83619	
+L121	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L121/02-04-2022-NA-NA-91962/302.000000-Full Dose Images-23356	
+N099	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N099/02-04-2022-NA-NA-71907/302.000000-Full Dose Images-72216	
+C098	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C098/02-04-2022-NA-NA-73546/302.000000-Full Dose Images-22023	
+N081	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N081/02-04-2022-NA-NA-91579/302.000000-Full Dose Images-93764	
+L036	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L036/02-04-2022-NA-NA-92649/304.000000-Full Dose Images-51364	
+L212	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L212/12-23-2021-NA-NA-70508/1.000000-Full Dose Images-30772	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L212/12-23-2021-NA-NA-70508/1.000000-Low Dose Images-62062
+L019	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L019/12-23-2021-NA-NA-03411/1.000000-Full Dose Images-23860	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L019/12-23-2021-NA-NA-03411/1.000000-Low Dose Images-71448
+N267	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N267/02-04-2022-NA-NA-31244/302.000000-Full Dose Images-10617	
+N208	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N208/02-04-2022-NA-NA-22761/302.000000-Full Dose Images-42874	
+C100	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C100/02-04-2022-NA-NA-31050/302.000000-Full Dose Images-00507	
+L235	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L235/02-04-2022-NA-NA-24088/302.000000-Full Dose Images-41802	
+C126	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C126/02-04-2022-NA-NA-02387/302.000000-Full Dose Images-61951	
+N012	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N012/12-23-2021-NA-NA-36085/1.000000-Full Dose Images-20199	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N012/12-23-2021-NA-NA-36085/1.000000-Low Dose Images-40756
+C155	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C155/02-04-2022-NA-NA-43114/302.000000-Full Dose Images-93805	
+L012	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L012/02-04-2022-NA-NA-70383/302.000000-Full Dose Images-20542	
+L183	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L183/02-04-2022-NA-NA-33918/302.000000-Full Dose Images-21339	
+L014	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L014/12-23-2021-NA-NA-83637/1.000000-Full Dose Images-28591	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L014/12-23-2021-NA-NA-83637/1.000000-Low Dose Images-22253
+C296	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C296/12-23-2021-NA-NA-16726/1.000000-Full Dose Images-05724	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C296/12-23-2021-NA-NA-16726/1.000000-Low Dose Images-11387
+N238	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N238/02-04-2022-NA-NA-50821/302.000000-Full Dose Images-16574	
+C190	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C190/12-23-2021-NA-NA-41640/1.000000-Full Dose Images-61820	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C190/12-23-2021-NA-NA-41640/1.000000-Low Dose Images-62068
+C227	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C227/12-23-2021-NA-NA-61334/1.000000-Full Dose Images-23888	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C227/12-23-2021-NA-NA-61334/1.000000-Low Dose Images-62390
+L131	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L131/12-23-2021-NA-NA-11616/1.000000-Full Dose Images-51623	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L131/12-23-2021-NA-NA-11616/1.000000-Low Dose Images-13865
+L185	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L185/02-04-2022-NA-NA-53927/302.000000-Full Dose Images-00781	
+L048	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L048/02-04-2022-NA-NA-33233/302.000000-Full Dose Images-91891	
+L260	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L260/02-04-2022-NA-NA-26116/302.000000-Full Dose Images-90934	
+L030	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L030/02-04-2022-NA-NA-35104/302.000000-Full Dose Images-10939	
+C182	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C182/02-04-2022-NA-NA-32551/302.000000-Full Dose Images-11832	
+L216	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L216/02-04-2022-NA-NA-72875/302.000000-Full Dose Images-12227	
+N047	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N047/12-23-2021-NA-NA-00830/1.000000-Full Dose Images-16753	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N047/12-23-2021-NA-NA-00830/1.000000-Low Dose Images-10816
+L057	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L057/12-23-2021-NA-NA-33955/1.000000-Full Dose Images-73465	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L057/12-23-2021-NA-NA-33955/1.000000-Low Dose Images-01420
+C189	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C189/02-04-2022-NA-NA-41177/302.000000-Full Dose Images-61786	
+N053	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N053/12-23-2021-NA-NA-38573/1.000000-Full Dose Images-20103	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N053/12-23-2021-NA-NA-38573/1.000000-Low Dose Images-73348
+N288	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N288/02-04-2022-NA-NA-11938/302.000000-Full Dose Images-51604	
+L178	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L178/12-23-2021-NA-NA-51393/1.000000-Full Dose Images-33693	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L178/12-23-2021-NA-NA-51393/1.000000-Low Dose Images-02765
+N132	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N132/12-23-2021-NA-NA-32031/1.000000-Full Dose Images-51665	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N132/12-23-2021-NA-NA-32031/1.000000-Low Dose Images-90121
+C128	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C128/12-23-2021-NA-NA-02217/1.000000-Full Dose Images-30214	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C128/12-23-2021-NA-NA-02217/1.000000-Low Dose Images-10572
+N131	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N131/02-04-2022-NA-NA-37788/302.000000-Full Dose Images-83718	
+L077	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L077/12-23-2021-NA-NA-04228/1.000000-Full Dose Images-10282	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L077/12-23-2021-NA-NA-04228/1.000000-Low Dose Images-08710
+C052	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C052/12-23-2021-NA-NA-14363/1.000000-Full Dose Images-53576	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C052/12-23-2021-NA-NA-14363/1.000000-Low Dose Images-92104
+C186	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C186/02-04-2022-NA-NA-22808/304.000000-Full Dose Images-32910	
+L238	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L238/02-04-2022-NA-NA-03863/302.000000-Full Dose Images-83528	
+L071	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L071/12-23-2021-NA-NA-33862/1.000000-Full Dose Images-70507	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L071/12-23-2021-NA-NA-33862/1.000000-Low Dose Images-84166
+L234	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L234/02-04-2022-NA-NA-12360/302.000000-Full Dose Images-52688	
+N152	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N152/02-04-2022-NA-NA-43527/302.000000-Full Dose Images-72809	
+L273	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L273/12-23-2021-NA-NA-07113/1.000000-Full Dose Images-40856	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L273/12-23-2021-NA-NA-07113/1.000000-Low Dose Images-61347
+L188	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L188/02-04-2022-NA-NA-82787/302.000000-Full Dose Images-12633	
+C135	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C135/12-23-2021-NA-NA-63971/1.000000-Full Dose Images-53667	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C135/12-23-2021-NA-NA-63971/1.000000-Low Dose Images-09111
+C213	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C213/02-04-2022-NA-NA-82080/302.000000-Full Dose Images-38987	
+N105	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N105/12-23-2021-NA-NA-32273/1.000000-Full Dose Images-01839	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N105/12-23-2021-NA-NA-32273/1.000000-Low Dose Images-04283
+L181	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L181/02-04-2022-NA-NA-23638/302.000000-Full Dose Images-63269	
+N029	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N029/02-04-2022-NA-NA-40554/302.000000-Full Dose Images-20622	
+N090	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N090/12-23-2021-NA-NA-23711/1.000000-Full Dose Images-91604	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N090/12-23-2021-NA-NA-23711/1.000000-Low Dose Images-92881
+L129	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L129/02-04-2022-NA-NA-31434/302.000000-Full Dose Images-62703	
+C266	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C266/02-04-2022-NA-NA-13515/302.000000-Full Dose Images-33494	
+C170	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C170/12-23-2021-NA-NA-00819/1.000000-Full Dose Images-93639	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C170/12-23-2021-NA-NA-00819/1.000000-Low Dose Images-21310
+C140	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C140/02-04-2022-NA-NA-52401/302.000000-Full Dose Images-22123	
+N293	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N293/12-23-2021-NA-NA-60207/1.000000-Full Dose Images-34055	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N293/12-23-2021-NA-NA-60207/1.000000-Low Dose Images-22734
+N191	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N191/02-04-2022-NA-NA-44107/302.000000-Full Dose Images-50807	
+N271	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N271/02-04-2022-NA-NA-21006/302.000000-Full Dose Images-21301	
+L113	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L113/02-04-2022-NA-NA-50160/302.000000-Full Dose Images-33540	
+N088	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N088/02-04-2022-NA-NA-61565/302.000000-Full Dose Images-33108	
+N160	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N160/12-23-2021-NA-NA-13902/1.000000-Full Dose Images-21061	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N160/12-23-2021-NA-NA-13902/1.000000-Low Dose Images-60221
+N269	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N269/02-04-2022-NA-NA-26882/302.000000-Full Dose Images-13673	
+N298	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N298/12-23-2021-NA-NA-21807/1.000000-Full Dose Images-28275	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N298/12-23-2021-NA-NA-21807/1.000000-Low Dose Images-70816
+C150	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C150/02-04-2022-NA-NA-80600/304.000000-Full Dose Images-06505	
+L269	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L269/02-04-2022-NA-NA-72628/302.000000-Full Dose Images-63713	
+L125	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L125/12-23-2021-NA-NA-02931/1.000000-Full Dose Images-83418	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L125/12-23-2021-NA-NA-02931/1.000000-Low Dose Images-41070
+N097	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N097/02-04-2022-NA-NA-20168/302.000000-Full Dose Images-91076	
+L220	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L220/12-23-2021-NA-NA-93580/1.000000-Full Dose Images-22124	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L220/12-23-2021-NA-NA-93580/1.000000-Low Dose Images-00007
+L127	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L127/02-04-2022-NA-NA-51457/303.000000-Full Dose Images-02965	
+C218	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C218/12-23-2021-NA-NA-23900/1.000000-Full Dose Images-70039	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C218/12-23-2021-NA-NA-23900/1.000000-Low Dose Images-32451
+C166	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C166/12-23-2021-NA-NA-50155/1.000000-Full Dose Images-04805	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C166/12-23-2021-NA-NA-50155/1.000000-Low Dose Images-43159
+N279	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N279/12-23-2021-NA-NA-13389/1.000000-Full Dose Images-73801	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N279/12-23-2021-NA-NA-13389/1.000000-Low Dose Images-23473
+C002	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C002/12-23-2021-NA-NA-62464/1.000000-Full Dose Images-22038	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C002/12-23-2021-NA-NA-62464/1.000000-Low Dose Images-39882
+C158	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C158/12-23-2021-NA-NA-83548/1.000000-Full Dose Images-40123	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C158/12-23-2021-NA-NA-83548/1.000000-Low Dose Images-36163
+L045	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L045/02-04-2022-NA-NA-39580/302.000000-Full Dose Images-53168	
+C129	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C129/02-04-2022-NA-NA-33175/302.000000-Full Dose Images-21564	
+L171	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L171/02-04-2022-NA-NA-05695/302.000000-Full Dose Images-13718	
+L138	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L138/02-04-2022-NA-NA-29268/302.000000-Full Dose Images-00559	
+L143	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L143/02-04-2022-NA-NA-83339/302.000000-Full Dose Images-62616	
+L231	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L231/02-04-2022-NA-NA-11321/302.000000-Full Dose Images-31941	
+L107	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L107/12-23-2021-NA-NA-02131/1.000000-Full Dose Images-64229	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L107/12-23-2021-NA-NA-02131/1.000000-Low Dose Images-03227
+N139	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N139/12-23-2021-NA-NA-73360/1.000000-Full Dose Images-50716	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N139/12-23-2021-NA-NA-73360/1.000000-Low Dose Images-21188
+L056	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L056/12-23-2021-NA-NA-43434/1.000000-Full Dose Images-72444	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L056/12-23-2021-NA-NA-43434/1.000000-Low Dose Images-61966
+L134	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L134/12-23-2021-NA-NA-03088/1.000000-Full Dose Images-13018	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L134/12-23-2021-NA-NA-03088/1.000000-Low Dose Images-91984
+C231	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C231/02-04-2022-NA-NA-13923/302.000000-Full Dose Images-21778	
+C162	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C162/12-23-2021-NA-NA-17871/1.000000-Full Dose Images-70376	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C162/12-23-2021-NA-NA-17871/1.000000-Low Dose Images-22759
+C130	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C130/12-23-2021-NA-NA-04244/1.000000-Full Dose Images-30091	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C130/12-23-2021-NA-NA-04244/1.000000-Low Dose Images-00363
+N140	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N140/12-23-2021-NA-NA-91187/1.000000-Full Dose Images-01568	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N140/12-23-2021-NA-NA-91187/1.000000-Low Dose Images-01446
+N182	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N182/02-04-2022-NA-NA-05425/302.000000-Full Dose Images-83974	
+N094	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N094/02-04-2022-NA-NA-11210/302.000000-Full Dose Images-13267	
+N162	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N162/02-04-2022-NA-NA-90035/302.000000-Full Dose Images-30805	
+N164	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N164/02-04-2022-NA-NA-34185/302.000000-Full Dose Images-08536	
+C107	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C107/12-23-2021-NA-NA-91033/1.000000-Full Dose Images-50880	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C107/12-23-2021-NA-NA-91033/1.000000-Low Dose Images-31911
+L179	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L179/12-23-2021-NA-NA-62118/1.000000-Full Dose Images-13229	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L179/12-23-2021-NA-NA-62118/1.000000-Low Dose Images-81303
+C202	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C202/12-23-2021-NA-NA-25107/1.000000-Full Dose Images-51842	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C202/12-23-2021-NA-NA-25107/1.000000-Low Dose Images-53118
+C141	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C141/02-04-2022-NA-NA-64100/302.000000-Full Dose Images-14218	
+C102	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C102/02-04-2022-NA-NA-14093/302.000000-Full Dose Images-42292	
+C077	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C077/12-23-2021-NA-NA-71841/1.000000-Full Dose Images-80792	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C077/12-23-2021-NA-NA-71841/1.000000-Low Dose Images-13369
+C001	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C001/02-04-2022-NA-NA-00775/304.000000-Full Dose Images-32775	
+L244	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L244/02-04-2022-NA-NA-63060/302.000000-Full Dose Images-28837	
+C249	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C249/12-23-2021-NA-NA-10802/1.000000-Full Dose Images-01860	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C249/12-23-2021-NA-NA-10802/1.000000-Low Dose Images-15627
+C299	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C299/02-04-2022-NA-NA-01315/302.000000-Full Dose Images-37624	
+N116	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N116/02-04-2022-NA-NA-03282/302.000000-Full Dose Images-41864	
+N127	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N127/12-23-2021-NA-NA-04374/1.000000-Full Dose Images-20851	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N127/12-23-2021-NA-NA-04374/1.000000-Low Dose Images-22335
+N138	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N138/12-23-2021-NA-NA-22426/1.000000-Full Dose Images-93683	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N138/12-23-2021-NA-NA-22426/1.000000-Low Dose Images-10663
+L187	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L187/12-23-2021-NA-NA-19391/1.000000-Full Dose Images-00406	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L187/12-23-2021-NA-NA-19391/1.000000-Low Dose Images-04062
+C193	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C193/12-23-2021-NA-NA-41385/1.000000-Full Dose Images-43193	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C193/12-23-2021-NA-NA-41385/1.000000-Low Dose Images-40262
+L136	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L136/02-04-2022-NA-NA-83600/302.000000-Full Dose Images-92629	
+C295	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C295/12-23-2021-NA-NA-11588/1.000000-Full Dose Images-18696	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C295/12-23-2021-NA-NA-11588/1.000000-Low Dose Images-60099
+N176	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N176/12-23-2021-NA-NA-41987/1.000000-Full Dose Images-82249	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N176/12-23-2021-NA-NA-41987/1.000000-Low Dose Images-31416
+C050	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C050/12-23-2021-NA-NA-38458/1.000000-Full Dose Images-84094	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C050/12-23-2021-NA-NA-38458/1.000000-Low Dose Images-81156
+C027	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C027/01-13-2022-NA-NA-40777/1.000000-Full Dose Images-03450	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C027/01-19-2022-NA-NA-40777/1.000000-Low Dose Images-53324
+L218	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L218/02-04-2022-NA-NA-29505/302.000000-Full Dose Images-29514	
+L175	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L175/12-23-2021-NA-NA-82117/1.000000-Full Dose Images-70359	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L175/12-23-2021-NA-NA-82117/1.000000-Low Dose Images-62817
+C267	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C267/12-23-2021-NA-NA-13659/1.000000-Full Dose Images-42223	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C267/12-23-2021-NA-NA-13659/1.000000-Low Dose Images-52166
+N025	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N025/02-04-2022-NA-NA-23446/302.000000-Full Dose Images-06199	
+C246	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C246/12-23-2021-NA-NA-42847/1.000000-Full Dose Images-90598	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C246/12-23-2021-NA-NA-42847/1.000000-Low Dose Images-19230
+N281	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N281/02-04-2022-NA-NA-40275/302.000000-Full Dose Images-92291	
+L082	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L082/02-04-2022-NA-NA-53701/302.000000-Full Dose Images-54276	
+L081	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L081/12-23-2021-NA-NA-42146/1.000000-Full Dose Images-73252	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L081/12-23-2021-NA-NA-42146/1.000000-Low Dose Images-27948
+N252	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N252/12-23-2021-NA-NA-53296/1.000000-Full Dose Images-64219	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N252/12-23-2021-NA-NA-53296/1.000000-Low Dose Images-41889
+N052	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N052/02-04-2022-NA-NA-00092/302.000000-Full Dose Images-94145	
+C092	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C092/02-04-2022-NA-NA-19999/302.000000-Full Dose Images-82546	
+N209	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N209/12-23-2021-NA-NA-03424/1.000000-Full Dose Images-72630	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N209/12-23-2021-NA-NA-03424/1.000000-Low Dose Images-44949
+L228	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L228/02-04-2022-NA-NA-34249/302.000000-Full Dose Images-02290	
+C293	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C293/02-04-2022-NA-NA-33084/302.000000-Full Dose Images-63143	
+C111	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C111/01-13-2022-NA-NA-73373/1.000000-Full Dose Images-62126	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C111/01-19-2022-NA-NA-73373/1.000000-Low Dose Images-50353
+C023	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C023/02-04-2022-NA-NA-23807/302.000000-Full Dose Images-90641	
+C070	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C070/02-04-2022-NA-NA-51253/302.000000-Full Dose Images-53102	
+L111	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L111/02-04-2022-NA-NA-71972/302.000000-Full Dose Images-08375	
+N073	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N073/02-04-2022-NA-NA-71468/302.000000-Full Dose Images-53599	
+L248	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L248/12-23-2021-NA-NA-41828/1.000000-Full Dose Images-91712	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L248/12-23-2021-NA-NA-41828/1.000000-Low Dose Images-05042
+L027	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L027/02-04-2022-NA-NA-43206/302.000000-Full Dose Images-54261	
+L044	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L044/02-04-2022-NA-NA-22469/302.000000-Full Dose Images-06229	
+C169	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C169/02-04-2022-NA-NA-82258/302.000000-Full Dose Images-20070	
+C009	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C009/02-04-2022-NA-NA-40176/302.000000-Full Dose Images-52856	
+C234	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C234/12-23-2021-NA-NA-94287/1.000000-Full Dose Images-72889	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C234/12-23-2021-NA-NA-94287/1.000000-Low Dose Images-73831
+L133	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L133/02-04-2022-NA-NA-81062/302.000000-Full Dose Images-17162	
+N226	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N226/02-04-2022-NA-NA-40241/302.000000-Full Dose Images-03963	
+L163	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L163/02-04-2022-NA-NA-50545/302.000000-Full Dose Images-44187	
+N082	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N082/12-23-2021-NA-NA-64130/1.000000-Full Dose Images-70884	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N082/12-23-2021-NA-NA-64130/1.000000-Low Dose Images-08881
+N096	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N096/02-04-2022-NA-NA-93206/302.000000-Full Dose Images-90642	
+L123	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L123/12-23-2021-NA-NA-92914/1.000000-Full Dose Images-30551	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L123/12-23-2021-NA-NA-92914/1.000000-Low Dose Images-12769
+L209	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L209/12-23-2021-NA-NA-22966/1.000000-Full Dose Images-11228	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L209/12-23-2021-NA-NA-22966/1.000000-Low Dose Images-63288
+N270	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N270/12-23-2021-NA-NA-51151/1.000000-Full Dose Images-34721	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N270/12-23-2021-NA-NA-51151/1.000000-Low Dose Images-32241
+L079	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L079/02-04-2022-NA-NA-60909/302.000000-Full Dose Images-09771	
+N253	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N253/02-04-2022-NA-NA-01675/302.000000-Full Dose Images-20988	
+N187	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N187/12-23-2021-NA-NA-22087/1.000000-Full Dose Images-81626	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N187/12-23-2021-NA-NA-22087/1.000000-Low Dose Images-63382
+L299	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L299/12-23-2021-NA-NA-31304/1.000000-Full Dose Images-29696	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L299/12-23-2021-NA-NA-31304/1.000000-Low Dose Images-20326
+N299	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N299/02-09-2022-NA-NA-02234/302.000000-Full Dose Images-23438	
+C221	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C221/02-04-2022-NA-NA-33364/302.000000-Full Dose Images-12127	
+C272	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C272/02-04-2022-NA-NA-82062/302.000000-Full Dose Images-60408	
+L094	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L094/02-04-2022-NA-NA-28705/302.000000-Full Dose Images-33516	
+C179	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C179/12-23-2021-NA-NA-44254/1.000000-Full Dose Images-60955	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C179/12-23-2021-NA-NA-44254/1.000000-Low Dose Images-50867
+N042	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N042/02-04-2022-NA-NA-23974/301.000000-Full Dose Images-42812	
+C255	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C255/02-04-2022-NA-NA-30052/302.000000-Full Dose Images-01975	
+N192	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N192/02-04-2022-NA-NA-72504/302.000000-Full Dose Images-42276	
+C099	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C099/12-23-2021-NA-NA-31907/1.000000-Full Dose Images-63270	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C099/12-23-2021-NA-NA-31907/1.000000-Low Dose Images-40983
+C174	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C174/02-04-2022-NA-NA-10469/302.000000-Full Dose Images-60952	
+N003	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N003/02-04-2022-NA-NA-10073/302.000000-Full Dose Images-37518	
+N180	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N180/12-23-2021-NA-NA-43731/1.000000-Full Dose Images-50479	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N180/12-23-2021-NA-NA-43731/1.000000-Low Dose Images-12966
+N169	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N169/12-23-2021-NA-NA-41236/1.000000-Full Dose Images-50494	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N169/12-23-2021-NA-NA-41236/1.000000-Low Dose Images-10434
+L267	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L267/02-04-2022-NA-NA-29040/302.000000-Full Dose Images-24473	
+L114	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L114/12-23-2021-NA-NA-42685/1.000000-Full Dose Images-10183	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L114/12-23-2021-NA-NA-42685/1.000000-Low Dose Images-31673
+L288	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L288/02-04-2022-NA-NA-84002/302.000000-Full Dose Images-41246	
+C268	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C268/12-23-2021-NA-NA-63578/1.000000-Full Dose Images-41559	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C268/12-23-2021-NA-NA-63578/1.000000-Low Dose Images-33611
+C113	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C113/02-04-2022-NA-NA-43624/302.000000-Full Dose Images-22704	
+L043	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L043/02-04-2022-NA-NA-20211/302.000000-Full Dose Images-01274	
+L064	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L064/12-23-2021-NA-NA-20463/1.000000-Full Dose Images-23308	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L064/12-23-2021-NA-NA-20463/1.000000-Low Dose Images-61144
+C125	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C125/02-04-2022-NA-NA-08152/302.000000-Full Dose Images-63352	
+N190	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N190/12-23-2021-NA-NA-21450/1.000000-Full Dose Images-34193	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N190/12-23-2021-NA-NA-21450/1.000000-Low Dose Images-21617
+C261	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C261/12-23-2021-NA-NA-91667/1.000000-Full Dose Images-63704	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C261/12-23-2021-NA-NA-91667/1.000000-Low Dose Images-70905
+N146	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N146/02-04-2022-NA-NA-53788/302.000000-Full Dose Images-51109	
+C175	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C175/02-04-2022-NA-NA-53351/302.000000-Full Dose Images-70904	
+N005	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N005/12-23-2021-NA-NA-16466/1.000000-Full Dose Images-60263	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N005/12-23-2021-NA-NA-16466/1.000000-Low Dose Images-11030
+L196	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L196/02-04-2022-NA-NA-02221/302.000000-Full Dose Images-51898	
+N074	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N074/02-04-2022-NA-NA-50516/302.000000-Full Dose Images-40931	
+L213	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L213/02-04-2022-NA-NA-08430/302.000000-Full Dose Images-71002	
+L116	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L116/12-23-2021-NA-NA-02953/1.000000-Full Dose Images-83876	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L116/12-23-2021-NA-NA-02953/1.000000-Low Dose Images-62560
+C232	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C232/12-23-2021-NA-NA-31854/1.000000-Full Dose Images-62783	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C232/12-23-2021-NA-NA-31854/1.000000-Low Dose Images-34097
+C121	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C121/12-23-2021-NA-NA-61870/1.000000-Full Dose Images-92811	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C121/12-23-2021-NA-NA-61870/1.000000-Low Dose Images-00959
+C245	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C245/02-04-2022-NA-NA-42722/302.000000-Full Dose Images-64230	
+N289	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N289/02-04-2022-NA-NA-31517/302.000000-Full Dose Images-26431	
+C241	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C241/12-23-2021-NA-NA-73915/1.000000-Full Dose Images-22189	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C241/12-23-2021-NA-NA-73915/1.000000-Low Dose Images-30731
+L024	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L024/02-04-2022-NA-NA-72343/302.000000-Full Dose Images-54068	
+N141	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N141/12-23-2021-NA-NA-11197/1.000000-Full Dose Images-16889	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N141/12-23-2021-NA-NA-11197/1.000000-Low Dose Images-64429
+C180	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C180/02-04-2022-NA-NA-44047/302.000000-Full Dose Images-82144	
+N185	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N185/02-04-2022-NA-NA-06114/302.000000-Full Dose Images-21423	
+C217	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C217/02-04-2022-NA-NA-03540/304.000000-Full Dose Images-40986	
+L186	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L186/12-23-2021-NA-NA-64264/1.000000-Full Dose Images-23298	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L186/12-23-2021-NA-NA-64264/1.000000-Low Dose Images-36537
+N287	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N287/02-04-2022-NA-NA-53816/302.000000-Full Dose Images-19637	
+C081	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C081/12-23-2021-NA-NA-61094/1.000000-Full Dose Images-00924	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C081/12-23-2021-NA-NA-61094/1.000000-Low Dose Images-30752
+C072	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C072/02-04-2022-NA-NA-20450/302.000000-Full Dose Images-91665	
+C145	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C145/02-04-2022-NA-NA-43718/302.000000-Full Dose Images-52792	
+C016	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C016/12-23-2021-NA-NA-72558/1.000000-Full Dose Images-51981	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C016/12-23-2021-NA-NA-72558/1.000000-Low Dose Images-82312
+L072	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L072/12-23-2021-NA-NA-81517/1.000000-Full Dose Images-61227	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L072/12-23-2021-NA-NA-81517/1.000000-Low Dose Images-60421
+L058	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L058/12-23-2021-NA-NA-00405/1.000000-Full Dose Images-41349	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L058/12-23-2021-NA-NA-00405/1.000000-Low Dose Images-81097
+C078	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C078/02-04-2022-NA-NA-36646/302.000000-Full Dose Images-22226	
+N247	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N247/02-04-2022-NA-NA-13717/302.000000-Full Dose Images-39710	
+L144	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L144/02-04-2022-NA-NA-39187/302.000000-Full Dose Images-23766	
+L193	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L193/12-23-2021-NA-NA-72340/1.000000-Full Dose Images-23274	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L193/12-23-2021-NA-NA-72340/1.000000-Low Dose Images-27667
+N177	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N177/12-23-2021-NA-NA-60878/1.000000-Full Dose Images-31885	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N177/12-23-2021-NA-NA-60878/1.000000-Low Dose Images-84061
+C238	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C238/02-04-2022-NA-NA-15233/301.000000-Full Dose Images-03044	
+L172	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L172/02-04-2022-NA-NA-12668/302.000000-Full Dose Images-12300	
+C219	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C219/12-23-2021-NA-NA-61692/1.000000-Full Dose Images-00225	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C219/12-23-2021-NA-NA-61692/1.000000-Low Dose Images-20555
+N156	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N156/12-23-2021-NA-NA-13986/1.000000-Full Dose Images-73429	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N156/12-23-2021-NA-NA-13986/1.000000-Low Dose Images-31248
+C280	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C280/12-23-2021-NA-NA-53988/1.000000-Full Dose Images-32482	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C280/12-23-2021-NA-NA-53988/1.000000-Low Dose Images-61674
+N021	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N021/02-04-2022-NA-NA-33706/302.000000-Full Dose Images-37259	
+N284	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N284/12-23-2021-NA-NA-22739/1.000000-Full Dose Images-41530	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N284/12-23-2021-NA-NA-22739/1.000000-Low Dose Images-37908
+N061	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N061/02-04-2022-NA-NA-32321/302.000000-Full Dose Images-20025	
+L166	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L166/02-04-2022-NA-NA-60659/302.000000-Full Dose Images-23372	
+L266	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L266/12-23-2021-NA-NA-72546/1.000000-Full Dose Images-54016	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L266/12-23-2021-NA-NA-72546/2.000000-Low Dose Images-32870
+N159	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/N159/02-04-2022-NA-NA-11421/302.000000-Full Dose Images-30629	
+L145	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L145/12-23-2021-NA-NA-12563/1.000000-Full Dose Images-25130	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L145/12-23-2021-NA-NA-12563/1.000000-Low Dose Images-61076
+C031	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C031/02-04-2022-NA-NA-43443/302.000000-Full Dose Images-15527	
+L251	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L251/02-04-2022-NA-NA-03765/302.000000-Full Dose Images-36487	
+L154	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L154/02-04-2022-NA-NA-61020/302.000000-Full Dose Images-91188	
+L148	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L148/12-23-2021-NA-NA-22515/1.000000-Full Dose Images-93070	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/L148/12-23-2021-NA-NA-22515/1.000000-Low Dose Images-51969
+C157	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C157/02-04-2022-NA-NA-50010/302.000000-Full Dose Images-21924	
+C030	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C030/12-23-2021-NA-NA-00817/1.000000-Full Dose Images-42665	/home/shared_data/LDCT/manifest-1648648375084/LDCT-and-Projection-data/C030/12-23-2021-NA-NA-00817/2.000000-Low Dose Images-21402
