@@ -12,12 +12,11 @@ from torch.utils.data import DataLoader, Dataset
 
 ### Data functions ###
 
-
 def ct_normalization(img, meta):
     """
-    Normaliza el rango HU a [0, 1].
-    Ajustamos de -1024 (aire) a 3072 (tejido denso) para cubrir un rango amplio
-    para resaltar detalles anatómicos.
+    Normalizes the HU range to [0, 1].
+    We adjust from -1024 (air) to 3072 (dense tissue) to cover a wide range
+    to highlight anatomical details.
     """
     def scale(img, meta, slope=1.0, intersept=-1024):
         MIN_B = -1024
@@ -26,9 +25,9 @@ def ct_normalization(img, meta):
         slope = float(meta.get("Rescale Slope", slope))
         intersept = float(meta.get("Rescale Intercept", intersept))
         
-        img = np.asarray(img) * slope + intersept  # Aplica la transformación de escala y desplazamiento
-        img = resize(img, (256, 256), preserve_range=True)  # Asegura que todas las imágenes tengan el mismo tamaño
-        img = (img - MIN_B) / (MAX_B - MIN_B)  # Escala a [0, 1]
+        img = np.asarray(img) * slope + intersept  # Apply the scale and offset transformation
+        img = resize(img, (256, 256), preserve_range=True)  # Ensure all images have the same size
+        img = (img - MIN_B) / (MAX_B - MIN_B)  # Scale to [0, 1]
         if img.ndim == 2:
             img = np.expand_dims(img, axis=0)
         return img.astype(np.float32)
@@ -38,7 +37,7 @@ def ct_normalization(img, meta):
 
 def _read_dicom(path: Path) -> np.ndarray:
     
-    ds = pydicom.dcmread(path)  # Lee el archivo DICOM y convierte a numpy array
+    ds = pydicom.dcmread(path)  # Read DICOM file and convert to a numpy array
     metadata = {}
     for element in ds:
             if getattr(element, "name", None) == "Pixel Data":
@@ -54,36 +53,19 @@ def _read_dicom(path: Path) -> np.ndarray:
 
     return ct_normalization(ds.pixel_array, metadata)
 
-def save_tensor_cache(tensor, cache_path: Path) -> None:
-        if cache_path is None:
-            return
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        tmp_path = cache_path.with_suffix(cache_path.suffix + ".tmp")
-        torch.save(tensor, tmp_path)
-        try:
-            with open(tmp_path, "rb+") as handle:
-                os.fsync(handle.fileno())
-        except OSError:
-            pass
-        os.replace(tmp_path, cache_path)
-
 
 class LDCTDataset(Dataset):
     def __init__(
         self,
         df: pd.DataFrame,
-        dim: int = 2,
         model_type: str = "model",
     ) -> None:
         """
         Args:
             df: DataFrame with either:
-                - dim == 2: columns ['Case', 'SDCT', 'LDCT'] where SDCT/LDCT are file paths to DICOM images
-                - dim == 3: columns ['Case', 'SDCT', 'LDCT'] where SDCT/LDCT are volume directories
             transform: Optional transform to be applied on a sample.
             model_type: "model" or "vae", used to determine how to process the data.
         """
-        self.dim = dim
         self.data = df.dropna()
         self.model_type = model_type
         self.cache_saving = False
@@ -92,7 +74,7 @@ class LDCTDataset(Dataset):
 
     def _preprocess(self) -> pd.DataFrame:
         rows = []
-        
+
         unwrap_dir = lambda path: sorted([str(path / fname) for fname in os.listdir(path) if (path / fname).is_file()])
 
         idx = 0
@@ -103,35 +85,16 @@ class LDCTDataset(Dataset):
             if self.model_type == "model":
                 ldct_dir = Path(row.LDCT)
                 ldct_files = unwrap_dir(ldct_dir)
-                
-                if self.dim == 3:
-                    rows.append({
-                        'Case': row.Case, 
-                        'SDCT': sdct_files, 
-                        'LDCT': ldct_files,
-                        'split_count': len(ldct_files),
-                        'split_idx': idx
-                    })
-                else:
-                    rows.extend([
-                        {'Case': row.Case, 'SDCT': s, 'LDCT': l, 'split_count': len(ldct_files), 'split_idx': idxS} 
-                        for idxS, (s, l) in enumerate(zip(sdct_files, ldct_files))
-                    ])
+                rows.extend([
+                    {'Case': row.Case, 'SDCT': s, 'LDCT': l, 'split_count': len(ldct_files), 'split_idx': idxS} 
+                    for idxS, (s, l) in enumerate(zip(sdct_files, ldct_files))
+                ])
             
             elif self.model_type == "vae":
-                if self.dim == 3:
-                    rows.append({
-                        'Case': row.Case, 
-                        'SDCT': sdct_files,
-                        'split_count': len(sdct_files),
-                        'split_idx': idx
-                    })
-                else:
-                    rows.extend([
-                        {'Case': row.Case, 'SDCT': s, 'split_count': len(sdct_files), 'split_idx': idxS} 
-                        for idxS, s in enumerate(sdct_files)
-                    ])
-
+                rows.extend([
+                    {'Case': row.Case, 'SDCT': s, 'split_count': len(sdct_files), 'split_idx': idxS} 
+                    for idxS, s in enumerate(sdct_files)
+                ])
             idx += 1
                     
         df = pd.DataFrame(rows)
@@ -141,29 +104,9 @@ class LDCTDataset(Dataset):
     def load_dicom(self, idx: int, modality: str = "SDCT") -> dict:
         row = self.data[idx]
         cache_path = "./cache/tensors"
-
-        check_cache = lambda modality: True if Path(f"./cache/tensors/{self.data[idx]['Case']}_{modality}.pt").exists() else False
-
-        if self.dim == 3:
-            if check_cache(modality):
-                cache_file = Path(f"./cache/tensors/{self.data[idx]['Case']}_{modality}.pt")
-                return torch.load(cache_file)
-            volume = np.array([_read_dicom(f) for f in sorted(row[modality])]) # Shape: (D, H, W)
-            tensor = torch.as_tensor(volume).float().contiguous()  # Shape: (1, D, H, W)
-            
-            if self.cache_saving:
-                save_tensor_cache(tensor, cache_path=Path(f"{cache_path}/{row['Case']}_{modality}").with_suffix('.pt'))
-                
-            return tensor
-        else:
-            if check_cache(modality):
-                cache_file = Path(f"./cache/tensors/{self.data[idx]['Case']}_{modality}.pt")
-                return torch.load(cache_file)
-            img = _read_dicom(Path(row[modality]))
-            tensor = torch.as_tensor(img).float().contiguous()  # Shape: (1, H, W)
-            if self.cache_saving:
-                save_tensor_cache(tensor, Path(f"{cache_path}/{row['split_idx']}_{row['Case']}_{modality}").with_suffix('.pt'))
-            return tensor
+        img = _read_dicom(Path(row[modality]))
+        tensor = torch.as_tensor(img).float().contiguous()  # Shape: (1, H, W)
+        return tensor
     
     def __len__(self) -> int:
         return self.size
@@ -172,22 +115,15 @@ class LDCTDataset(Dataset):
         row = self.data[idx]
         sample = {'Case': row['Case']}
         sample['split_idx'] = row['split_idx']
-        sample['size'] = (256, 256) if self.dim == 2 else (len(row['SDCT']), 256, 256)
+        sample['size'] = (256, 256)
         if self.model_type == "model":
-            # sample['SDCT'] = row['SDCT']
             sample['SDCT'] = self.load_dicom(idx, modality='SDCT')
-            # sample['LDCT'] = row['LDCT']
             sample['LDCT'] = self.load_dicom(idx, modality='LDCT')
         elif self.model_type == "vae":
-            # sample['SDCT'] = row['SDCT']
             sample['SDCT'] = self.load_dicom(idx, modality='SDCT')
         
         return sample
     
-
-import torch.nn.functional as F
-
-## Eval Functions ##
 
 def save_checkpoint(state: dict, path: Path) -> None:
     if torch is None:
@@ -260,6 +196,10 @@ def save_epoch_metrics(epoch: int, recon_loss: float, kl_loss: float, avg_loss: 
             'avg_loss': f"{avg_loss:.4f}"
         }) 
 
+import torch.nn.functional as F
+
+## Eval Functions ##
+
 def focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0.25, gamma: float = 2.0, reduction: str = "mean") -> torch.Tensor:
     """
     Simple focal loss on logits (binary).
@@ -283,6 +223,7 @@ def bce_focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0
     foc = focal_loss(logits, targets, alpha=alpha, gamma=gamma, reduction=reduction)
     return bce + foc
 
+# Changable parameters for GPU selection
 # import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -291,13 +232,13 @@ train = True
 dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
 print("Dataset loaded successfully.")
 dataset = dataset.dropna(subset=["SDCT"])
-ldct_dataset = LDCTDataset(dataset, dim=2, model_type="vae")
+ldct_dataset = LDCTDataset(dataset, model_type="vae")
 print("Dataset object created successfully.")
 
 train = False
 val_dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
 print("Validation Dataset loaded successfully.")
-val_ldct_dataset = LDCTDataset(val_dataset, dim=2, model_type="vae")
+val_ldct_dataset = LDCTDataset(val_dataset, model_type="vae")
 print("Validation Dataset object created successfully.")
 
 loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
@@ -308,10 +249,7 @@ from monai.networks.nets import AutoencoderKL
 from monai.losses import PerceptualLoss
 from tqdm import tqdm
 
-# --- 1. Configuración de Hardware y Modelo ---
 torch.cuda.empty_cache()
-# device = torch.device("cuda") # GPU seleccionada
-
 model_params = {
     'spatial_dims': 2,
     'in_channels': 1,
@@ -333,11 +271,10 @@ perceptual = PerceptualLoss(
     pretrained=True
 ).to(device)
 
-
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-04)
 
-# --- 2. Parámetros de Entrenamiento ---
-kl_weight =  1e-06 # Peso de la KL
+# --- 2. Training Parameters ---
+kl_weight =  1e-06
 perceptual_weight = 1.0
 num_epochs = 100
 batch_size = 4
@@ -358,7 +295,7 @@ for epoch in range(1, num_epochs+1):
         optimizer.zero_grad()
 
         inputs = batch["SDCT"].to(device)
-        # Asegurar dimensiones [B, 1, 256, 256]
+        # Ensure [B, 1, 256, 256] dimensions for 2D data (add channel dimension if missing)
         if inputs.ndim == 3:
             inputs = inputs.unsqueeze(1)
         
@@ -371,30 +308,26 @@ for epoch in range(1, num_epochs+1):
             recon, mu, sigma = model(chunk)
             logvar = 2 * torch.log(sigma + 1e-8)
 
-            recon = torch.sigmoid(recon)  # Asegurar que los valores estén en [0, 1] para la pérdida de reconstrucción
+            recon = torch.sigmoid(recon)  # Ensure values are in [0, 1] for reconstruction loss
 
-            # 2. Cálculo de Pérdidas
+            # 2. Loss Calculation
             recon_loss = F.l1_loss(recon, chunk)
-            # focal requiere sigmoid al final para asegurar que los valores estén en [0, 1]
+            # focal requires sigmoid at the end to ensure values are in [0, 1]
             # recon_loss = F.binary_cross_entropy_with_logits(recon, chunk, reduction='mean')
             # recon_loss = bce_focal_loss(recon, chunk)
 
             if perceptual:
                 recon_p = recon.repeat(1, 3, 1, 1)
-                # Aplicar sigmoid antes de la pérdida perceptual para asegurar que los valores estén en [0, 1]
+                # Apply sigmoid before the perceptual loss to ensure values are in [0, 1]
                 # recon_p = torch.sigmoid(recon).repeat(1, 3, 1, 1)
                 chunk_p = chunk.repeat(1, 3, 1, 1)
-                # 3. Perdida perceltual
+                # 3. Perceptual Loss
                 perceptual_loss = perceptual(recon_p, chunk_p)
 
             # KL Divergence 
             kl_div = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1)
             kl_loss = kl_div.mean()
 
-            # 3. Total Loss con Microbatching
-            # if epoch <= 5:
-            #     loss = recon_loss
-            # else:
             loss = (
                 recon_loss 
                 + (kl_weight * kl_loss)
@@ -411,7 +344,7 @@ for epoch in range(1, num_epochs+1):
             totals['perceptual_loss'] += perceptual_loss.detach().cpu() * chunk_bs
             
         num_samples += bs
-        # Actualizar barra de progreso (usando .item() para evitar leaks de memoria)
+        
         postfix = {
             'loss': f"{totals['loss']/max(1, num_samples):.4f}",
             'recon_loss': f"{totals['recon_loss']/max(1, num_samples):.4f}",
@@ -436,7 +369,7 @@ for epoch in range(1, num_epochs+1):
             
             for batch in val_loop:
                 inputs = batch["SDCT"].to(device)
-                # Asegurar dimensiones [B, 1, 256, 256]
+
                 if inputs.ndim == 3:
                     inputs = inputs.unsqueeze(1)
                 
@@ -445,29 +378,26 @@ for epoch in range(1, num_epochs+1):
                 accumulation_steps = len(chunks)
 
                 for chunk in chunks:
-                    # 1. Forward Pass
+
                     recon, mu, sigma = model(chunk)
                     logvar = 2 * torch.log(sigma + 1e-8)
 
-                    recon = torch.sigmoid(recon)  # Asegurar que los valores estén en [0, 1] para la pérdida de reconstrucción
-
-                    # 2. Cálculo de Pérdidas
+                    recon = torch.sigmoid(recon)
                     recon_loss = F.l1_loss(recon, chunk)
                     # recon_loss = F.binary_cross_entropy_with_logits(recon, chunk, reduction='mean')
-                    # focal requiere sigmoid al final para asegurar que los valores estén en [0, 1]
+                    # require sigmoid to ensure values are in [0, 1]
                     # recon_loss = bce_focal_loss(recon, chunk)
 
                     if perceptual:
                         recon_p = recon.repeat(1, 3, 1, 1)
                         chunk_p = chunk.repeat(1, 3, 1, 1)
-                        # 3. Perdida perceltual
+                        # 3. Perceptual Loss
                         perceptual_loss = perceptual(recon_p, chunk_p)
 
                     # KL Divergence 
                     kl_div = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1)
                     kl_loss = kl_div.mean()
 
-                    # 3. Total Loss con Microbatching
                     loss = (
                         recon_loss 
                         + kl_weight * kl_loss
@@ -481,7 +411,6 @@ for epoch in range(1, num_epochs+1):
                     val_totals['perceptual_loss'] += perceptual_loss.detach().cpu() * chunk_bs
                     
                 val_num_samples += bs
-                # Actualizar barra de progreso (usando .item() para evitar leaks de memoria)
                 postfix = {
                     'loss': f"{val_totals['loss']/max(1, val_num_samples):.4f}",
                     'recon_loss': f"{val_totals['recon_loss']/max(1, val_num_samples):.4f}",
@@ -495,7 +424,7 @@ for epoch in range(1, num_epochs+1):
         }
 
     l, rec, kl, perc = [v for _, v in avg_totals.items()] if val_loader is not None else [v for _, v in val_avg_totals.items()]
-    print(f"--- Epoch {epoch} Finalizada. Avg Loss: {l:.4f} Avg: KL loss: {kl:.4f} Avg Recon loss: {rec:.4f}, Avg Perceptual loss: {perc:.4f}---")
+    print(f"--- Epoch {epoch} Ended. Avg Loss: {l:.4f} Avg: KL loss: {kl:.4f} Avg Recon loss: {rec:.4f}, Avg Perceptual loss: {perc:.4f}---")
     
     save_epoch_metrics(epoch, rec, kl, l, perc, ckpt_path)
 
