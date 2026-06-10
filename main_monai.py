@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader, Dataset
 
 ### Data functions ###
 
+
 def ct_normalization(img, meta):
     """
     Normaliza el rango HU a [0, 1].
@@ -33,6 +34,7 @@ def ct_normalization(img, meta):
         return img.astype(np.float32)
     
     return scale(img, meta)
+
 
 def _read_dicom(path: Path) -> np.ndarray:
     
@@ -90,7 +92,7 @@ class LDCTDataset(Dataset):
 
     def _preprocess(self) -> pd.DataFrame:
         rows = []
-
+        
         unwrap_dir = lambda path: sorted([str(path / fname) for fname in os.listdir(path) if (path / fname).is_file()])
 
         idx = 0
@@ -193,9 +195,74 @@ def save_checkpoint(state: dict, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     torch.save(state, path)
 
+
+def verify_and_create_folder(path: Path) -> Path:
+    import glob
+    
+    # Find all existing folders matching pattern monai_*
+    existing_folders = glob.glob(str(path / "monai_*"))
+    existing_numbers = []
+    
+    for folder in existing_folders:
+        try:
+            number = int(folder[27:])
+            existing_numbers.append(number)
+        except:
+            pass
+
+    # Get the last number or start at 0
+    last_number = max(existing_numbers) if existing_numbers else 0
+    new_number = last_number + 1
+    
+    # Create new folder
+    new_folder = path / f"monai_{new_number}"
+    Path(new_folder).mkdir(parents=True, exist_ok=True)
+    return new_folder
+
+def save_model_config(config: dict, path: Path) -> None:
+    import json
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path / "config.json", "w") as f:
+        json.dump(config, f, indent=4)
+
+def save_epoch_metrics(epoch: int, recon_loss: float, kl_loss: float, avg_loss: float, perceptual_loss: float, csv_path: Path) -> None:
+    """
+    Save epoch metrics to a CSV file.
+    
+    Args:
+        epoch: Current epoch number
+        recon_loss: Reconstruction loss value
+        kl_loss: KL divergence loss value
+        avg_loss: Average loss for the epoch
+        perceptual_loss: Perceptual loss value
+        csv_path: Path to save the CSV file
+    """
+    import csv
+    csv_path = csv_path / "metrics.csv"
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Check if file exists to determine if we need to write headers
+    file_exists = csv_path.exists()
+    
+    with open(csv_path, 'a', newline='') as csvfile:
+        fieldnames = ['epoch', 'recon_loss','perceptual_loss', 'kl_loss', 'avg_loss']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        # Write header only if file is new
+        if not file_exists:
+            writer.writeheader()
+        
+        writer.writerow({
+            'epoch': epoch,
+            'recon_loss': f"{recon_loss:.4f}",
+            'perceptual_loss': f"{perceptual_loss:.4f}",
+            'kl_loss': f"{kl_loss:.4f}",
+            'avg_loss': f"{avg_loss:.4f}"
+        }) 
+
 def focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0.25, gamma: float = 2.0, reduction: str = "mean") -> torch.Tensor:
     """
-    Simple focal loss on logits (binary). Defaults follow the original focal paper.
+    Simple focal loss on logits (binary).
     """
     prob = torch.sigmoid(logits)
     ce = F.binary_cross_entropy_with_logits(logits, targets, reduction="none")
@@ -216,53 +283,79 @@ def bce_focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0
     foc = focal_loss(logits, targets, alpha=alpha, gamma=gamma, reduction=reduction)
     return bce + foc
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 train = True
 dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
 print("Dataset loaded successfully.")
+dataset = dataset.dropna(subset=["SDCT"])
 ldct_dataset = LDCTDataset(dataset, dim=2, model_type="vae")
 print("Dataset object created successfully.")
 
+train = False
+val_dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
+print("Validation Dataset loaded successfully.")
+val_ldct_dataset = LDCTDataset(val_dataset, dim=2, model_type="vae")
+print("Validation Dataset object created successfully.")
+
 loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
+val_loader = DataLoader(val_ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
 
 import torch
 from monai.networks.nets import AutoencoderKL
+from monai.losses import PerceptualLoss
 from tqdm import tqdm
 
 # --- 1. Configuración de Hardware y Modelo ---
 torch.cuda.empty_cache()
 # device = torch.device("cuda") # GPU seleccionada
 
+model_params = {
+    'spatial_dims': 2,
+    'in_channels': 1,
+    'out_channels': 1,
+    'channels': (128, 256, 512, 512),
+    'latent_channels': 4,
+    'num_res_blocks': 2,
+    'attention_levels': (False, False, True, True),
+}
+
 model = AutoencoderKL(
-    spatial_dims=2,
-    in_channels=1,
-    out_channels=1,
-    channels=(128, 256, 512, 512),
-    latent_channels=4, 
-    num_res_blocks=2,
-    attention_levels=(False, False, True, True), 
+    **model_params
 ).to(device)
+
+perceptual = PerceptualLoss(
+    spatial_dims=2, 
+    network_type="vgg", 
+    is_fake_3d=False, 
+    pretrained=True
+).to(device)
+
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-04)
 
 # --- 2. Parámetros de Entrenamiento ---
 kl_weight =  1e-06 # Peso de la KL
-vq_weight = 1.0
+perceptual_weight = 1.0
 num_epochs = 100
 batch_size = 4
-num_samples = 0
+best_metric = float('inf')
 
-model.train()
+path = Path("./checkpoints/VaeMonai")
+ckpt_path = verify_and_create_folder(path)
+save_model_config(model_params, ckpt_path)
+
 for epoch in range(1, num_epochs+1):
-    loop = tqdm(loader, desc=f"Epoch [{epoch}/{num_epochs}]")
-    epoch_loss = 0.0
+    model.train()
+    num_samples = 0
+    loop = tqdm(loader, desc=f"Train [{epoch}/{num_epochs}]")
+    totals = {'loss': 0.0, 'recon_loss': 0.0, 'kl_loss': 0.0, 'perceptual_loss': 0.0}
 
     for batch in loop:
 
-        optimizer.zero_grad() # Se resetea al inicio de cada acumulación técnica
+        optimizer.zero_grad()
 
         inputs = batch["SDCT"].to(device)
         # Asegurar dimensiones [B, 1, 256, 256]
@@ -278,28 +371,146 @@ for epoch in range(1, num_epochs+1):
             recon, mu, sigma = model(chunk)
             logvar = 2 * torch.log(sigma + 1e-8)
 
+            recon = torch.sigmoid(recon)  # Asegurar que los valores estén en [0, 1] para la pérdida de reconstrucción
+
             # 2. Cálculo de Pérdidas
-            recon_loss = bce_focal_loss(recon, inputs)
+            recon_loss = F.l1_loss(recon, chunk)
+            # focal requiere sigmoid al final para asegurar que los valores estén en [0, 1]
+            # recon_loss = F.binary_cross_entropy_with_logits(recon, chunk, reduction='mean')
+            # recon_loss = bce_focal_loss(recon, chunk)
+
+            if perceptual:
+                recon_p = recon.repeat(1, 3, 1, 1)
+                # Aplicar sigmoid antes de la pérdida perceptual para asegurar que los valores estén en [0, 1]
+                # recon_p = torch.sigmoid(recon).repeat(1, 3, 1, 1)
+                chunk_p = chunk.repeat(1, 3, 1, 1)
+                # 3. Perdida perceltual
+                perceptual_loss = perceptual(recon_p, chunk_p)
 
             # KL Divergence 
             kl_div = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1)
             kl_loss = kl_div.mean()
 
             # 3. Total Loss con Microbatching
-            loss = (recon_loss + (kl_weight * kl_loss)) / accumulation_steps
-            loss.backward()
+            # if epoch <= 5:
+            #     loss = recon_loss
+            # else:
+            loss = (
+                recon_loss 
+                + (kl_weight * kl_loss)
+                + (perceptual_weight * perceptual_loss)
+            )
+
+
+            (loss / accumulation_steps).backward()
+            
             chunk_bs = chunk.size(0)
-
-            # Actualizar barra de progreso
-            epoch_loss += loss.item() * accumulation_steps
-            loop.set_postfix(recon=recon_loss.detach().item() * chunk_bs, kl=kl_loss.detach().item() * chunk_bs)
-
+            totals['loss'] += loss.detach().cpu() * chunk_bs
+            totals['recon_loss'] += recon_loss.detach().cpu() * chunk_bs
+            totals['kl_loss'] += kl_loss.detach().cpu() * chunk_bs
+            totals['perceptual_loss'] += perceptual_loss.detach().cpu() * chunk_bs
+            
+        num_samples += bs
+        # Actualizar barra de progreso (usando .item() para evitar leaks de memoria)
+        postfix = {
+            'loss': f"{totals['loss']/max(1, num_samples):.4f}",
+            'recon_loss': f"{totals['recon_loss']/max(1, num_samples):.4f}",
+            'kl_loss': f"{totals['kl_loss']/max(1, num_samples):.4f}",
+            'perceptual_loss': f"{totals['perceptual_loss']/max(1, num_samples):.4f}"
+        }
+        loop.set_postfix(**postfix)
 
         optimizer.step()
-    num_samples += bs
 
-    print(f"--- Epoch {epoch} Finalizada. Avg Loss: {epoch_loss/max(1, num_samples):.4f} ---")
+    avg_totals = {
+        k: v/max(1, num_samples) for k, v in totals.items()
+    }
+
+    if val_loader is not None:
+        val_num_samples = 0
+        val_totals = {k: 0.0 for k in totals}
+
+        model.eval()
+        with torch.no_grad():
+            val_loop = tqdm(val_loader, desc=f"Val [{epoch}/{num_epochs}]")
+            
+            for batch in val_loop:
+                inputs = batch["SDCT"].to(device)
+                # Asegurar dimensiones [B, 1, 256, 256]
+                if inputs.ndim == 3:
+                    inputs = inputs.unsqueeze(1)
+                
+                bs = inputs.size(0)
+                chunks = inputs.split(batch_size)
+                accumulation_steps = len(chunks)
+
+                for chunk in chunks:
+                    # 1. Forward Pass
+                    recon, mu, sigma = model(chunk)
+                    logvar = 2 * torch.log(sigma + 1e-8)
+
+                    recon = torch.sigmoid(recon)  # Asegurar que los valores estén en [0, 1] para la pérdida de reconstrucción
+
+                    # 2. Cálculo de Pérdidas
+                    recon_loss = F.l1_loss(recon, chunk)
+                    # recon_loss = F.binary_cross_entropy_with_logits(recon, chunk, reduction='mean')
+                    # focal requiere sigmoid al final para asegurar que los valores estén en [0, 1]
+                    # recon_loss = bce_focal_loss(recon, chunk)
+
+                    if perceptual:
+                        recon_p = recon.repeat(1, 3, 1, 1)
+                        chunk_p = chunk.repeat(1, 3, 1, 1)
+                        # 3. Perdida perceltual
+                        perceptual_loss = perceptual(recon_p, chunk_p)
+
+                    # KL Divergence 
+                    kl_div = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1)
+                    kl_loss = kl_div.mean()
+
+                    # 3. Total Loss con Microbatching
+                    loss = (
+                        recon_loss 
+                        + kl_weight * kl_loss
+                        + perceptual_weight * perceptual_loss
+                    )
+                
+                    chunk_bs = chunk.size(0)
+                    val_totals['loss'] += loss.detach().cpu() * chunk_bs
+                    val_totals['recon_loss'] += recon_loss.detach().cpu() * chunk_bs
+                    val_totals['kl_loss'] += kl_loss.detach().cpu() * chunk_bs
+                    val_totals['perceptual_loss'] += perceptual_loss.detach().cpu() * chunk_bs
+                    
+                val_num_samples += bs
+                # Actualizar barra de progreso (usando .item() para evitar leaks de memoria)
+                postfix = {
+                    'loss': f"{val_totals['loss']/max(1, val_num_samples):.4f}",
+                    'recon_loss': f"{val_totals['recon_loss']/max(1, val_num_samples):.4f}",
+                    'kl_loss': f"{val_totals['kl_loss']/max(1, val_num_samples):.4f}",
+                    'perceptual_loss': f"{val_totals['perceptual_loss']/max(1, val_num_samples):.4f}"
+                }
+                val_loop.set_postfix(**postfix)
+
+        val_avg_totals = {
+            k: v/max(1, val_num_samples) for k, v in val_totals.items()
+        }
+
+    l, rec, kl, perc = [v for _, v in avg_totals.items()] if val_loader is not None else [v for _, v in val_avg_totals.items()]
+    print(f"--- Epoch {epoch} Finalizada. Avg Loss: {l:.4f} Avg: KL loss: {kl:.4f} Avg Recon loss: {rec:.4f}, Avg Perceptual loss: {perc:.4f}---")
     
+    save_epoch_metrics(epoch, rec, kl, l, perc, ckpt_path)
+
+    state = {
+        'epoch': epoch,
+        'model': model.state_dict(),
+        'optimizer': optimizer.state_dict(),
+        'loss': loss.item(),
+    }
+
+    current_metric = l
+    if current_metric < best_metric:
+        best_metric = current_metric
+        save_checkpoint(state, ckpt_path / "vae_best.pt")
+
     should_save = epoch % 10 == 0 or epoch == 100
     if should_save:
         state = {
@@ -309,5 +520,5 @@ for epoch in range(1, num_epochs+1):
             'loss': loss.item(),
         }
 
-        save_checkpoint(state, Path(f"./checkpoints/VaeMonai/monai_{epoch}.pt"))
+        save_checkpoint(state, ckpt_path / f"monai_{epoch}.pt")
         
