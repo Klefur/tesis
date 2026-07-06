@@ -34,7 +34,6 @@ def ct_normalization(img, meta):
     
     return scale(img, meta)
 
-
 def _read_dicom(path: Path) -> np.ndarray:
     
     ds = pydicom.dcmread(path)  # Read DICOM file and convert to a numpy array
