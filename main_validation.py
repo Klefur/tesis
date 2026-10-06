@@ -133,8 +133,21 @@ class LDCTDataset(Dataset):
         return sample
 
 
+from skimage import exposure
+
+def equalize_images_to_common_contrast(image, reference):
+    image = np.asarray(image, dtype=np.float32)
+    reference = np.asarray(reference, dtype=np.float32)
+
+    if image.ndim == 2:
+        target = exposure.equalize_adapthist(reference)
+        image_eq = exposure.match_histograms(image, target)
+        reference_eq = exposure.match_histograms(reference, target)
+
+    return np.clip(image_eq, 0.0, 1.0), np.clip(reference_eq, 0.0, 1.0)
+
 @torch.no_grad()
-def plot_flow_inference_vae(vae, unet, batch, device, num_steps=20, show_plots=True):
+def plot_flow_inference_vae(dataset, vae, unet, batch, device, num_steps=20, show_plots=True):
     vae.eval()
     unet.eval()
     
@@ -156,6 +169,9 @@ def plot_flow_inference_vae(vae, unet, batch, device, num_steps=20, show_plots=T
     ldct_img = ldct[0,0].cpu().numpy()
     sdct_img = sdct[0,0].cpu().numpy()
     flow_img = recon_sdct_flow[0,0].cpu().numpy()
+
+    if dataset == 'clrm':
+        flow_img, sdct_img = equalize_images_to_common_contrast(flow_img, sdct_img)
 
     data_range = 1.0 
     psnr_val = compute_psnr(sdct_img, flow_img, data_range=data_range)
@@ -249,30 +265,61 @@ def print_results(model, pasos, psnr_values, ssim_values, start, end):
     minutes = int(elapsed // 60)
     seconds = elapsed % 60
     print(f"Resultados Modelo {model} con {pasos} pasos")
-    print(f"Tiempo: {minutes} min {seconds:.2f} s")
-    print(f"Promedio PSNR: {np.mean(psnr_values):.2f} dB, SSIM: {np.mean(ssim_values):.4f}")
+    print(f"Tiempo: {minutes} min {seconds:.2f} s\n")
+    # print(f"Promedio PSNR: {np.mean(psnr_values):.2f} dB, SSIM: {np.mean(ssim_values):.4f}")
 
-def mean_metrics(vae, models, val_data, device, steps):
-    psnr_values_vae = []
-    ssim_values_vae = []
+def save_results_to_csv(dataset, model, pasos, psnr_values, ssim_values, start, end, filename="results.csv"):
+    elapsed = end - start
+    minutes = int(elapsed // 60)
+    seconds = elapsed % 60
+    avg_psnr = np.mean(psnr_values)
+    avg_ssim = np.mean(ssim_values)
+
+    results_df = pd.DataFrame({
+        "Dataset": [dataset],
+        "Model": [model],
+        "Steps": [pasos],
+        # "PSNR Values": [psnr_values],
+        # "SSIM Values": [ssim_values],
+        # "Average PSNR": [avg_psnr],
+        # "Average SSIM": [avg_ssim],
+        "Time (min)": [minutes],
+        "Time (s)": [seconds]
+    })
+
+    if not os.path.isfile(filename):
+        results_df.to_csv(filename, index=False)
+    else:
+        results_df.to_csv(filename, mode='a', header=False, index=False)
+
+def mean_metrics(dataset, vae, models, val_data, device, steps):
+    psnr_values = []
+    ssim_values = []
+
+    file_name = f"time_results_vae7fm4_fm3.csv"
 
     start = time.time()
     for batch in val_data:
-        psnr, ssim = plot_flow_inference_vae(vae, models[0], batch, device, num_steps=steps, show_plots=False)
-        psnr_values_vae.append(psnr)
-        ssim_values_vae.append(ssim)
+        psnr, ssim = plot_flow_inference_vae(dataset, vae, models[0], batch, device, num_steps=steps, show_plots=False)
+        psnr_values.append(psnr)
+        ssim_values.append(ssim)
     end = time.time()
 
-    print_results("con vae", steps, psnr_values_vae, ssim_values_vae, start, end)
+    print_results("con vae", steps, psnr_values, ssim_values, start, end)
+    save_results_to_csv(dataset, "con vae", steps, psnr_values, ssim_values, start, end, filename=file_name)
 
+    psnr_values = []
+    ssim_values = []
+    
     start = time.time()
     for batch in val_data:
         psnr, ssim = plot_flow_inference_model(models[1], batch, device, num_steps=steps, show_plots=False)
-        psnr_values_vae.append(psnr)
-        ssim_values_vae.append(ssim)
+        psnr_values.append(psnr)
+        ssim_values.append(ssim)
     end = time.time()
 
-    print_results("sin vae", steps, psnr_values_vae, ssim_values_vae, start, end)
+    print_results("sin vae", steps, psnr_values, ssim_values, start, end)
+    save_results_to_csv(dataset,"sin vae", steps, psnr_values, ssim_values, start, end, filename=file_name)
 
 def get_validation_loader(dataset_name: str):
     path_map = {
@@ -280,8 +327,23 @@ def get_validation_loader(dataset_name: str):
         "mgc": os.path.join("Dataset", "mgc_test.txt"),
         "test": os.path.join("Dataset", "test.txt")
     }
-    val_dataset = pd.read_csv(path_map[dataset_name], sep='\t', names=('Case','SDCT','LDCT',))
-    val_ldct_dataset = LDCTDataset(val_dataset, model_type="model")
+
+    if dataset_name == 'mgc':
+        mgc_dataset=pd.read_csv(os.path.join("Dataset", "mgc_test.txt"), sep='\t', names=('Case','SDCT','LDCT',))
+        mgc_dataset = mgc_dataset.dropna(subset=["SDCT"])
+        val_ldct_dataset = LDCTDataset(mgc_dataset, model_type="model")
+
+    if dataset_name == 'clrm':
+        clrm_dataset=pd.read_csv(os.path.join("Dataset", "clrm_test.txt"), sep='\t', names=('Case','SDCT','LDCT',))
+        clrm_dataset = clrm_dataset.dropna(subset=["SDCT"])
+        # Select random 50% to train and 50% to validation
+        train_indices = clrm_dataset.sample(frac=0.5, random_state=42).index
+        val_indices = clrm_dataset.drop(train_indices).index
+
+        val_ldct_dataset = LDCTDataset(clrm_dataset.iloc[val_indices], model_type="model")
+    else: 
+        val_dataset = pd.read_csv(path_map[dataset_name], sep='\t', names=('Case','SDCT','LDCT',))
+        val_ldct_dataset = LDCTDataset(val_dataset, model_type="model")
     return DataLoader(
         val_ldct_dataset,
         batch_size=1,
@@ -347,6 +409,9 @@ def main():
         block_out_channels=(128, 256, 512, 512),  # Channel progression
         down_block_types=("DownBlock2D", "DownBlock2D", "AttnDownBlock2D", "AttnDownBlock2D"),
         up_block_types=("AttnUpBlock2D", "AttnUpBlock2D", "UpBlock2D", "UpBlock2D"),
+        # [block_out_channels=(128, 256, 256, 512, 512),  # Channel progression
+        # down_block_types=("DownBlock2D", "DownBlock2D", "DownBlock2D", "AttnDownBlock2D", "AttnDownBlock2D"),
+        # up_block_types=("AttnUpBlock2D", "AttnUpBlock2D", "UpBlock2D", "UpBlock2D", "UpBlock2D"),]
     ).to(device)
     state_dict = torch.load("./checkpoints/VaeMonaiFM/monai_3/vaeFM_best.pt", map_location=device)
     model2.load_state_dict(state_dict["model"])
@@ -355,8 +420,7 @@ def main():
         val_loader = get_validation_loader(dataset)
         print(f"Using dataset: {dataset}")
         for steps in args.steps:
-            mean_metrics(vae, [model, model2], val_loader, device, steps)
-        print()
+            mean_metrics(dataset, vae, [model, model2], val_loader, device, steps)
 
 if __name__ == "__main__":
     main()

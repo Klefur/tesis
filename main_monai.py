@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import os
+import random
 
 import numpy as np
 import pandas as pd
@@ -225,23 +226,43 @@ def bce_focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0
 # Changable parameters for GPU selection
 # import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 train = True
 dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
-print("Dataset loaded successfully.")
-dataset = dataset.dropna(subset=["SDCT"])
-ldct_dataset = LDCTDataset(dataset, model_type="vae")
-print("Dataset object created successfully.")
 
 train = False
 val_dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
-print("Validation Dataset loaded successfully.")
-val_ldct_dataset = LDCTDataset(val_dataset, model_type="vae")
-print("Validation Dataset object created successfully.")
 
-loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
-val_loader = DataLoader(val_ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
+clrm_dataset=pd.read_csv(os.path.join("Dataset", "clrm_test.txt"), sep='\t', names=('Case','SDCT','LDCT',))
+clrm_dataset = clrm_dataset.dropna(subset=["SDCT"])
+
+# Select random 50% to train and 50% to validation
+train_indices = clrm_dataset.sample(frac=0.5, random_state=42).index
+val_indices = clrm_dataset.drop(train_indices).index
+
+clrm_train_dataset = clrm_dataset.iloc[train_indices]
+clrm_val_dataset = clrm_dataset.iloc[val_indices]
+
+# Join the datasets
+dataset = pd.concat([dataset, clrm_train_dataset], ignore_index=True)
+val_dataset = pd.concat([val_dataset, clrm_val_dataset], ignore_index=True)
+
+ldct_dataset = LDCTDataset(dataset, model_type="vae")
+val_ldct_dataset = LDCTDataset(val_dataset, model_type="vae")
+
+data_loader_generator = torch.Generator().manual_seed(SEED)
+loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available(), generator=data_loader_generator)
+val_loader = DataLoader(val_ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available(), generator=data_loader_generator)
 
 import torch
 from monai.networks.nets import AutoencoderKL

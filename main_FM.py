@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import os
+import random
 
 import numpy as np
 import pandas as pd
@@ -167,7 +168,15 @@ def verify_and_create_folder(path: Path) -> Path:
     Path(new_folder).mkdir(parents=True, exist_ok=True)
     return new_folder
 
-import os
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+
 device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 
 train = True
@@ -183,8 +192,9 @@ print("Validation Dataset loaded successfully.")
 val_ldct_dataset = LDCTDataset(val_dataset, model_type="model")
 print("Validation Dataset object created successfully.")
 
-loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
-val_loader = DataLoader(val_ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
+data_loader_generator = torch.Generator().manual_seed(SEED)
+loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available(), generator=data_loader_generator)
+val_loader = DataLoader(val_ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available(), generator=data_loader_generator)
 
 from diffusers import UNet2DModel
 import torch

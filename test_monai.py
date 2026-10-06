@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import os
+import random
 
 import numpy as np
 import pandas as pd
@@ -226,15 +227,20 @@ def bce_focal_loss(logits: torch.Tensor, targets: torch.Tensor, alpha: float = 0
 # Changable parameters for GPU selection
 # import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+SEED = 42
+DATA_FRACTION = 0.1
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 train = True
 dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
-new_length = int(len(dataset.SDCT) * .1)
-
-dataset["Case"] = dataset["Case"][: new_length]
-dataset["SDCT"] = dataset["SDCT"][: new_length]
-dataset["LDCT"] = dataset["LDCT"][: new_length]
+dataset = dataset.dropna(subset=["Case", "SDCT", "LDCT"])
+dataset = dataset.sample(frac=DATA_FRACTION, random_state=SEED).reset_index(drop=True)
 print("Dataset loaded successfully.")
 ldct_dataset = LDCTDataset(dataset, dim=2, model_type="model")
 print("Dataset object created successfully.")
@@ -243,6 +249,8 @@ loader = DataLoader(ldct_dataset, batch_size=4, shuffle=True, num_workers=4, pin
 train = False
 val_dataset = pd.read_csv(os.path.join("Dataset", 'train.txt' if train else 'test.txt'), sep='\t', names=('Case','SDCT','LDCT',))
 print("Validation Dataset loaded successfully.")
+val_dataset = val_dataset.dropna(subset=["Case", "SDCT", "LDCT"])
+val_dataset = val_dataset.sample(frac=DATA_FRACTION, random_state=SEED).reset_index(drop=True)
 val_ldct_dataset = LDCTDataset(val_dataset, dim=2, model_type="vae")
 print("Validation Dataset object created successfully.")
 
